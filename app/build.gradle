@@ -19,6 +19,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs'
+apply plugin: 'org.jetbrains.dokka-android'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -75,4 +76,12 @@ dependencies {
 
 kapt {
     useBuildCache = true
+}
+
+dokka {
+    outputFormat = 'html'
+    outputDirectory = "$buildDir/docs/dokka"
+    sourceRoot {
+        path = 'src/main'
+    }
 }
