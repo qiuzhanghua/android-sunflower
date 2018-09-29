@@ -50,15 +50,15 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.android.tools.build:gradle:${gradleVersion}"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
-        classpath "android.arch.navigation:navigation-safe-args-gradle-plugin:${navigationVersion}"
-        classpath "org.jetbrains.dokka:dokka-android-gradle-plugin:${dokkaVersion}"
+        classpath("com.android.tools.build:gradle:${gradleVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+        classpath("android.arch.navigation:navigation-safe-args-gradle-plugin:${navigationVersion}")
+        classpath("org.jetbrains.dokka:dokka-android-gradle-plugin:${dokkaVersion}")
     }
 }
 
 plugins {
-    id "com.diffplug.gradle.spotless" version "3.13.0"
+    id("com.diffplug.gradle.spotless") version "3.13.0"
 }
 
 allprojects {
@@ -71,7 +71,7 @@ allprojects {
 
 spotless {
     kotlin {
-        target "**/*.kt"
+        target("**/*.kt")
         ktlint(ktlintVersion)
     }
 }
