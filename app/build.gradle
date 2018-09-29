@@ -72,3 +72,7 @@ dependencies {
     androidTestImplementation "androidx.test.uiautomator:uiautomator:$rootProject.uiAutomatorVersion"
     testImplementation "junit:junit:$rootProject.junitVersion"
 }
+
+kapt {
+    useBuildCache = true
+}
