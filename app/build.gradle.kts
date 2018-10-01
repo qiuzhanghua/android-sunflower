@@ -1,3 +1,5 @@
+import org.jetbrains.dokka.gradle.SourceRoot
+
 /*
  * Copyright 2018 Google LLC
  *
@@ -26,7 +28,7 @@ plugins {
 android {
     compileSdkVersion(Deps.compileSdkVersion)
     dataBinding {
-        enabled = true
+        isEnabled = true
     }
     defaultConfig {
         applicationId = "com.google.samples.apps.sunflower"
@@ -38,14 +40,14 @@ android {
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
-        release {
-            minifyEnabled = false
+        named("release") {
+            isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        setSourceCompatibility(JavaVersion.VERSION_1_8)
+        setTargetCompatibility(JavaVersion.VERSION_1_8)
     }
 }
 
@@ -80,10 +82,10 @@ kapt {
     useBuildCache = true
 }
 
-dokka {
+tasks.dokka {
     outputFormat = "html"
     outputDirectory = "$buildDir/docs/dokka"
-    sourceRoot {
+    sourceRoot(delegateClosureOf<SourceRoot> {
         path = "src/main"
-    }
+    })
 }
