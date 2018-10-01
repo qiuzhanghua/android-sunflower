@@ -24,14 +24,14 @@ plugins {
 }
 
 android {
-    compileSdkVersion(rootProject.compileSdkVersion)
+    compileSdkVersion(Deps.compileSdkVersion)
     dataBinding {
         enabled = true
     }
     defaultConfig {
         applicationId = "com.google.samples.apps.sunflower"
-        minSdkVersion(rootProject.minSdkVersion)
-        targetSdkVersion(rootProject.targetSdkVersion)
+        minSdkVersion(Deps.minSdkVersion)
+        targetSdkVersion(Deps.targetSdkVersion)
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         versionCode = 1
         versionName = "0.1.5"
@@ -50,30 +50,30 @@ android {
 }
 
 dependencies {
-    kapt("androidx.room:room-compiler:${rootProject.roomVersion}")
-    kapt("com.github.bumptech.glide:compiler:${rootProject.glideVersion}")
-    implementation("android.arch.navigation:navigation-fragment-ktx:${rootProject.navigationVersion}")
-    implementation("android.arch.navigation:navigation-ui-ktx:${rootProject.navigationVersion}")
-    implementation("android.arch.work:work-runtime-ktx:${rootProject.workVersion}")
-    implementation("androidx.appcompat:appcompat:${rootProject.supportLibraryVersion}")
-    implementation("androidx.constraintlayout:constraintlayout:${rootProject.constraintLayoutVersion}")
-    implementation("androidx.core:core-ktx:${rootProject.ktxVersion}")
-    implementation("androidx.legacy:legacy-support-v4:${rootProject.supportLibraryVersion}")
-    implementation("androidx.lifecycle:lifecycle-extensions:${rootProject.lifecycleVersion}")
-    implementation("androidx.recyclerview:recyclerview:${rootProject.supportLibraryVersion}")
-    implementation("androidx.room:room-runtime:${rootProject.roomVersion}")
-    implementation("com.github.bumptech.glide:glide:${rootProject.glideVersion}")
-    implementation("com.google.android.material:material:${rootProject.supportLibraryVersion}")
-    implementation("com.google.code.gson:gson:${rootProject.gsonVersion}")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${rootProject.kotlinVersion}")
+    kapt("androidx.room:room-compiler:${Deps.roomVersion}")
+    kapt("com.github.bumptech.glide:compiler:${Deps.glideVersion}")
+    implementation("android.arch.navigation:navigation-fragment-ktx:${Deps.navigationVersion}")
+    implementation("android.arch.navigation:navigation-ui-ktx:${Deps.navigationVersion}")
+    implementation("android.arch.work:work-runtime-ktx:${Deps.workVersion}")
+    implementation("androidx.appcompat:appcompat:${Deps.supportLibraryVersion}")
+    implementation("androidx.constraintlayout:constraintlayout:${Deps.constraintLayoutVersion}")
+    implementation("androidx.core:core-ktx:${Deps.ktxVersion}")
+    implementation("androidx.legacy:legacy-support-v4:${Deps.supportLibraryVersion}")
+    implementation("androidx.lifecycle:lifecycle-extensions:${Deps.lifecycleVersion}")
+    implementation("androidx.recyclerview:recyclerview:${Deps.supportLibraryVersion}")
+    implementation("androidx.room:room-runtime:${Deps.roomVersion}")
+    implementation("com.github.bumptech.glide:glide:${Deps.glideVersion}")
+    implementation("com.google.android.material:material:${Deps.supportLibraryVersion}")
+    implementation("com.google.code.gson:gson:${Deps.gsonVersion}")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Deps.kotlinVersion}")
 
     // Testing dependencies
-    androidTestImplementation("androidx.arch.core:core-testing:${rootProject.coreTestingVersion}")
-    androidTestImplementation("androidx.test.espresso:espresso-contrib:${rootProject.espressoVersion}")
-    androidTestImplementation("androidx.test.espresso:espresso-core:${rootProject.espressoVersion}")
-    androidTestImplementation("androidx.test.espresso:espresso-intents:${rootProject.espressoVersion}")
-    androidTestImplementation("androidx.test.uiautomator:uiautomator:${rootProject.uiAutomatorVersion}")
-    testImplementation("junit:junit:${rootProject.junitVersion}")
+    androidTestImplementation("androidx.arch.core:core-testing:${Deps.coreTestingVersion}")
+    androidTestImplementation("androidx.test.espresso:espresso-contrib:${Deps.espressoVersion}")
+    androidTestImplementation("androidx.test.espresso:espresso-core:${Deps.espressoVersion}")
+    androidTestImplementation("androidx.test.espresso:espresso-intents:${Deps.espressoVersion}")
+    androidTestImplementation("androidx.test.uiautomator:uiautomator:${Deps.uiAutomatorVersion}")
+    testImplementation("junit:junit:${Deps.junitVersion}")
 }
 
 kapt {
